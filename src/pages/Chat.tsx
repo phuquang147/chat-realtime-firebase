@@ -1,7 +1,7 @@
-import React from 'react';
 import ChatWindow from '~/components/Chat/ChatWindow';
 import RoomDetail from '~/components/Chat/RoomDetail';
 import Sidebar from '~/components/Chat/Sidebar';
+import Modal from '~/HOC/Modal';
 
 export default function Chat() {
   return (
@@ -9,6 +9,7 @@ export default function Chat() {
       <Sidebar />
       <ChatWindow />
       <RoomDetail />
+      <Modal />
     </div>
   );
 }

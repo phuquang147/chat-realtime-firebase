@@ -18,10 +18,10 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #44afe0;
+  background: #ced4da;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #10294c;
+  background: #868e96;
 }

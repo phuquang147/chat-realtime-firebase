@@ -1,6 +1,7 @@
-import firebase, { auth, db } from '~/firebase/config';
+import { useEffect } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import firebase, { auth } from '~/firebase/config';
 import { addDocument } from '~/firebase/service';
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -19,10 +20,15 @@ export default function Login() {
         providerId: additionalUserInfo.providerId,
       });
     }
-    auth.onAuthStateChanged((user) => {
+  };
+
+  useEffect(() => {
+    const unsubscribed = auth.onAuthStateChanged((user) => {
       if (user) navigate('/');
     });
-  };
+
+    return unsubscribed;
+  }, []);
 
   return (
     <div className="w-screen h-screen bg-login-bg bg-cover flex justify-center items-center">
