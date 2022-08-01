@@ -32,11 +32,11 @@ export default function Login() {
 
   return (
     <div className="w-screen h-screen bg-login-bg bg-cover flex justify-center items-center">
-      <div className="bg-white p-10 rounded">
-        <h1 className="text-4xl leading-9 text-center font-bold">LOGIN</h1>
+      <div className="bg-slate-800 p-10 rounded bg-opacity-90">
+        <h1 className="text-white text-4xl leading-9 text-center font-bold">LOGIN</h1>
         <button
           onClick={handleLogin}
-          className="w-full mt-10 py-2 px-20 rounded text-red-500 outline-none border border-red-500 flex items-center"
+          className="bg-transparent w-full mt-10 py-2 px-20 rounded text-red-500 outline-none border border-red-500 flex items-center hover:bg-red-200 active:bg-red-400 hover:bg-opacity-10 active:bg-opacity-10"
         >
           <FaGoogle className="mr-2" />
           Login with Google

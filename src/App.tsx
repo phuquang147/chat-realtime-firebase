@@ -1,8 +1,13 @@
+import { Toaster } from 'react-hot-toast';
 import Routes from './routes';
-import AuthGuard from './routes/AuthGuard';
 
 function App() {
-  return <Routes />;
+  return (
+    <>
+      <Routes />
+      <Toaster />
+    </>
+  );
 }
 
 export default App;

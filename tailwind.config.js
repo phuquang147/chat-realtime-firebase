@@ -7,11 +7,19 @@ module.exports = {
     extend: {
       colors: {
         'light-gray': '#f6f7f9',
-        'primary-yellow': '#ffe14c',
+        primary: '#ffe14c',
         'dark-gray': '#2a3751',
       },
       backgroundImage: {
-        'login-bg': "url('/src/assets/images/login_bg.svg')",
+        'login-bg': "url('/src/assets/images/login.jpg')",
+      },
+      maxWidth: {
+        '3/4': '75%',
+      },
+      minWidth: {
+        '1/2': '50%',
+        '3/4': '75%',
+        '2/5': '40%',
       },
     },
   },
