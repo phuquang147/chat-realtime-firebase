@@ -4,5 +4,6 @@ import * as RoomSaga from './RoomSaga';
 
 export default function* rootSaga() {
   yield fork(UserSaga.userLoginListener);
+  yield fork(UserSaga.userListListener);
   yield all([RoomSaga.followForkRoomListListener()]);
 }

@@ -8,7 +8,7 @@ export default function Chat() {
     <div className="grid grid-cols-12">
       <Sidebar />
       <ChatWindow />
-      <RoomDetail />
+      {/* <RoomDetail /> */}
       <Modal />
     </div>
   );

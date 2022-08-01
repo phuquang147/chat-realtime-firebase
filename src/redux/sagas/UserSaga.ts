@@ -1,6 +1,6 @@
 import { eventChannel } from 'redux-saga';
 import { put, take } from 'redux-saga/effects';
-import { auth } from '~/firebase/config';
+import { auth, db } from '~/firebase/config';
 import * as ActionTypes from '../constants/constant';
 
 export function* userLoginListener() {
@@ -33,29 +33,24 @@ export function* userLoginListener() {
   }
 }
 
-// export function* userListListener() {
-//   const channel = new eventChannel((emiter) => {
-//     const listener = db
-//       .collection('users')
-//       .orderBy('createdAt')
-//       .onSnapshot((snapshot) => {
-//         const documents = snapshot.docs.map((doc) => {
-//           return {
-//             ...doc.data(),
-//             id: doc.id,
-//           };
-//         });
-//         emiter({ data: documents });
-//       });
+export function* userListListener() {
+  const channel = new (eventChannel as any)((emiter: any) => {
+    const unsubscribe = db.collection('users').onSnapshot((snapshot) => {
+      const documents = snapshot.docs.map((doc) => {
+        return {
+          ...doc.data(),
+          id: doc.id,
+        };
+      });
+      emiter({ data: documents });
+    });
 
-//     return () => {
-//       listener.off();
-//     };
-//   });
+    return unsubscribe;
+  });
 
-//   while (true) {
-//     const { data } = yield take(channel);
-//     console.log(data);
-//     // yield put(actionsCreators.updateList(data));
-//   }
-// }
+  while (true) {
+    const { data } = yield take(channel);
+
+    yield put({ type: ActionTypes.GET_USER_LIST, data: data });
+  }
+}
