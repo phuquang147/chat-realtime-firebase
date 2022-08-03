@@ -3,7 +3,6 @@ import { MessageProps } from '~/components/Chat/Message';
 import * as ActionTypes from '../constants/constant';
 
 export interface MemberProps {
-  nickname: string;
   id: string;
   isRead: boolean;
 }
