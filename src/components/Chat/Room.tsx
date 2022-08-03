@@ -25,8 +25,10 @@ export default function Room({ room }: { room: RoomProps }) {
           <p className="text-sm font-normal text-gray-500">Just now</p>
         </div>
         <div className="flex justify-between items-center mt-1">
-          <p className="text-sm">{room.lastMessage ? room.lastMessage.content : '...'}</p>
-          <p className="text-xs bg-primary px-2 py-1 rounded-full">2</p>
+          <p className="text-sm">
+            {room.lastMessage ? (room.lastMessage.type === 'text' ? room.lastMessage.content : 'Photo') : '...'}
+          </p>
+          {/* <p className="text-xs bg-primary px-2 py-1 rounded-full">2</p> */}
         </div>
       </div>
     </div>
