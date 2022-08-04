@@ -54,11 +54,11 @@ export default function SettingsModal() {
 
   return (
     <div>
-      <p className="text-2xl font-bold text-center text-gray-700">Settings</p>
+      <p className="text-2xl font-bold text-center text-gray-700 dark:text-gray-100">Settings</p>
       <div className="w-full relative flex justify-center mt-10">
         <label
           htmlFor="avatarSetting"
-          className="w-20 h-20 border-3px rounded-xl p-2px mr-2 bg-white border-dashed hover:bg-transparent hover:border-primary cursor-pointer"
+          className="w-20 h-20 border-3px rounded-full p-2px mr-2 bg-white border-dashed hover:bg-transparent hover:border-primary cursor-pointer"
         >
           <img src={avatar} alt="avatar" className="rounded-full w-full h-full object-cover ring-2 ring-primary" />
           <input
@@ -70,14 +70,17 @@ export default function SettingsModal() {
           />
         </label>
       </div>
-      <p className="mt-4">Name</p>
+      <p className="mt-4 dark:text-gray-100">Name</p>
       <input
-        className="w-full mt-2 mb-8 p-4 bg-light-gray text-gray-600 rounded-xl outline-none focus:ring-1 focus:ring-gray-300"
+        className="w-full mt-2 mb-8 p-4 bg-light-gray dark:bg-light-blue-gray text-gray-600 dark:text-gray-100 rounded-xl outline-none focus:ring-1 focus:ring-gray-300 dark:focus:ring-gray-400"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <div className="flex gap-2 mt-4">
-        <button className="flex-1 p-4 bg-gray-200 rounded" onClick={handleCancel}>
+        <button
+          className="flex-1 p-4 bg-gray-200 dark:bg-dark-blue-gray dark:text-gray-100 rounded"
+          onClick={handleCancel}
+        >
           Cancel
         </button>
         <button className="flex-1 p-4 bg-primary rounded" onClick={handleSubmit}>

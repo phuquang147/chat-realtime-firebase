@@ -92,7 +92,7 @@ export default function InputMessage({ selectedRoom }: Props) {
   };
 
   return (
-    <div className="flex gap-4 p-4">
+    <div className="flex gap-4 p-4 dark:bg-blue-gray transition-colors duration-300">
       <Popover
         isOpen={emojiPickerVisible}
         positions={['top']}
@@ -101,12 +101,12 @@ export default function InputMessage({ selectedRoom }: Props) {
         padding={10}
         onClickOutside={handleToggleEmoji}
       >
-        <div className="flex-1 flex items-center justify-center bg-white text-gray-600 rounded-full outline-none focus:ring-1 group-hover:ring-gray-300 group">
+        <div className="flex-1 flex items-center justify-center bg-white dark:bg-light-blue-gray text-gray-600 rounded-full outline-none focus:ring-1 group-hover:ring-gray-300 group">
           {messageType === 'text' ? (
             <>
               <input
                 placeholder="Type message..."
-                className="flex-1 h-full py-4 px-6 outline-none rounded-full"
+                className="flex-1 h-full py-4 px-6 outline-none rounded-full bg-transparent dark:text-gray-100"
                 value={message}
                 onChange={(e) => setMessage(e.target.value.toString())}
                 onKeyDown={(e) => {
@@ -116,9 +116,9 @@ export default function InputMessage({ selectedRoom }: Props) {
 
               <label
                 htmlFor="imageMessage"
-                className="mr-1 border-3px rounded-xl bg-white border-dashed hover:bg-transparent hover:border-primary cursor-pointer"
+                className="dark:bg-light-blue-gray hover:bg-primary hover:bg-opacity-50 dark:hover:bg-blue-gray active:bg-primary active:bg-opacity-70 dark:active:bg-dark-blue-gray mr-1 border-3px rounded-full bg-white cursor-pointer"
               >
-                <div className="bg-white hover:bg-primary hover:bg-opacity-50 active:bg-primary active:bg-opacity-70 text-2xl p-3 rounded-full">
+                <div className="text-2xl p-3 rounded-full dark:text-white">
                   <BsImage />
                 </div>
                 <input
@@ -131,7 +131,7 @@ export default function InputMessage({ selectedRoom }: Props) {
               </label>
 
               <button
-                className="bg-white hover:bg-primary hover:bg-opacity-50 active:bg-primary active:bg-opacity-70 text-2xl p-3 mr-1 rounded-full"
+                className="bg-white dark:bg-light-blue-gray dark:text-white hover:bg-primary hover:bg-opacity-50 dark:hover:bg-blue-gray active:bg-primary active:bg-opacity-70 dark:active:bg-dark-blue-gray text-2xl p-3 mr-1 rounded-full"
                 onClick={handleToggleEmoji}
               >
                 <BsEmojiSmile />

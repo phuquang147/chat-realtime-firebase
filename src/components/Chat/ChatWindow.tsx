@@ -8,10 +8,10 @@ export default function ChatWindow() {
   const { selectedRoom } = useSelector((state: any) => state.RoomReducer);
 
   return selectedRoom ? (
-    <div className="h-screen col-span-9 bg-light-gray flex flex-col border-x border-light-gray">
-      <div className="flex items-center p-4 bg-white">
+    <div className="h-screen col-span-9 bg-light-gray dark:bg-blue-gray transition-colors duration-300 flex flex-col border-x border-light-gray dark:border-blue-gray">
+      <div className="flex items-center p-4 bg-white dark:bg-dark-blue-gray">
         <Avatar size="46" maxInitials={1} round color="#a6b2c9" src={selectedRoom.photoUrl} name={selectedRoom.name} />
-        <p className="text-base font-semibold text-gray-800 ml-4">{selectedRoom.name}</p>
+        <p className="text-base font-semibold text-gray-800 dark:text-gray-100 ml-4">{selectedRoom.name}</p>
       </div>
       <div className="flex-1 overflow-auto">
         <MessageList />

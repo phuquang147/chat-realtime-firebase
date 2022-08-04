@@ -7,7 +7,7 @@ export default function Modal() {
     <div>
       <div className="flex items-center justify-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div className="relative min-w-full md:min-w-3/4 lg:min-w-2/5 p-2">
-          <div className="border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white dark:bg-blue-gray outline-none focus:outline-none">
             <div className="relative p-6 md:p-10 flex-auto">{children}</div>
           </div>
         </div>

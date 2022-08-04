@@ -6,9 +6,9 @@ export default function GroupChatRoomForm() {
 
   return (
     <div>
-      <p> Name</p>
+      <p className="dark:text-gray-100"> Name</p>
       <input
-        className="w-full mt-2 mb-8 p-4 bg-light-gray text-gray-600 rounded-xl outline-none focus:ring-1 focus:ring-gray-300"
+        className="w-full mt-2 mb-8 p-4 bg-light-gray dark:bg-light-blue-gray text-gray-600 dark:text-gray-100 rounded-xl outline-none focus:ring-1 focus:ring-gray-300"
         value={name}
         onChange={(e) => {
           setName(e.target.value);
