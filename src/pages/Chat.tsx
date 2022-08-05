@@ -1,6 +1,6 @@
-import ChatWindow from '~/components/Chat/ChatWindow';
-import RoomDetail from '~/components/Chat/RoomDetail';
-import Sidebar from '~/components/Chat/Sidebar';
+import ChatWindow from '~/components/ChatWindow';
+import RoomDetail from '~/components/RoomDetail';
+import Sidebar from '~/components/Sidebar';
 import Modal from '~/HOC/Modal';
 
 export default function Chat() {

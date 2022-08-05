@@ -19,7 +19,7 @@ export default function ChatWindow() {
       <InputMessage selectedRoom={selectedRoom} />
     </div>
   ) : (
-    <div className="h-screen col-span-6 bg-light-gray flex flex-col items-center justify-center">
+    <div className="h-screen col-span-9 bg-light-gray dark:bg-blue-gray transition-colors duration-200 flex flex-col items-center justify-center">
       <AiOutlineMessage className="text-8xl text-gray-300" />
       <p className="text-lg text-gray-400 mt-3">Please select chat room</p>
     </div>

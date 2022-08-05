@@ -1,5 +1,5 @@
 import { Timestamp } from 'firebase/firestore';
-import { MessageProps } from '~/components/Chat/Message';
+import { MessageProps } from '~/components/Message';
 import * as ActionTypes from '../constants/constant';
 
 export interface MemberProps {

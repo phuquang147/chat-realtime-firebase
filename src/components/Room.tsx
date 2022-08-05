@@ -21,7 +21,7 @@ export default function Room({ room }: { room: RoomProps }) {
       <Avatar size="50" maxInitials={1} round color="#a6b2c9" src={room.photoUrl} name={room.name} />
       <div className="flex-1 ml-4">
         <div className="flex justify-between items-center">
-          <p className="text-base font-semibold dark:text-gray-200">{room.name}</p>
+          <p className="text-base font-semibold dark:text-gray-100">{room.name}</p>
           <p className="text-sm font-normal text-gray-500 dark:text-gray-400">Just now</p>
         </div>
         <div className="flex justify-between items-center mt-1">

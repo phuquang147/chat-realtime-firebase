@@ -96,7 +96,7 @@ export default function InputMessage({ selectedRoom }: Props) {
       <Popover
         isOpen={emojiPickerVisible}
         positions={['top']}
-        content={<Picker data={data} onEmojiSelect={(emoji: any) => appendEmoji(emoji)} theme="light" />}
+        content={<Picker data={data} onEmojiSelect={(emoji: any) => appendEmoji(emoji)} theme={localStorage.theme} />}
         align="end"
         padding={10}
         onClickOutside={handleToggleEmoji}
